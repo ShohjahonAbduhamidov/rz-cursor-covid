@@ -1,61 +1,158 @@
+/* IMPORT FONT FAMLY LINK  */
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap);
+
 /* CUSTOM PROPS CSS START  */
 :root {
-    --primary-color: #000;
-    --text-color: #fff;
+  --primary-color: #091353;
+  --text-color: #b2f9fc;
 }
 
 /* GLOBAL CSS START  */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 *,
 *::after,
 *::before {
-    box-sizing:inherit;
+  box-sizing: inherit;
 }
 
 *:focus {
-    outline: 2px dotted var(--primary-color);
-    outline-offset: 3px;
+  outline: 2px dotted var(--primary-color);
+  outline-offset: 3px;
 }
 
 html {
-    height: 100%;
-    box-sizing:border-box;
-    scroll-behavior: smooth;
+  height: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  cursor: url("../images/face-covid.png"), pointer;
+  
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background-color: var(--text-color);
-    padding: 0;
-    margin: 0;
-    font-family: "Arial", sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: var(--primary-color);
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 /* CONTAINER CSS START  */
 .container {
-     width: 100%;
-     max-width: 1200px;
-     margin-left: auto;
-     margin-right: auto;
-     padding-left: 50px;
-     padding-right: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+/* NAME  */
+.name {
+  position: relative;
+  bottom: 90px;
+  text-align: center;
+  color: #00ffff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* SAIT MAIN CSS START  */
 .site-main {
-    flex-grow: 1;
+  flex-grow: 1;
+}
+
+/* FACE CSS START  */
+.container .face {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #ffcd00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.container .face:hover {
+  background: linear-gradient(180deg, #f44336, #f44336, #ffcd00);
+}
+
+.container .face::before {
+  content: "";
+  position: absolute;
+  top: 180px;
+  width: 150px;
+  height: 70px;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  background-color: #b57700;
+  transition: 0.5s ease;
+}
+
+.container .face:hover::before {
+  top: 210px;
+  width: 150px;
+  height: 20px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background-color: #9d0b00;
+}
+
+.container .face .eyes {
+  position: relative;
+  top: -35px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container .face .eyes .eye {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 0 15px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.container .face .eyes .eye::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+.container h2 {
+  position: absolute;
+  top: 75px;
+  font-size: 3em;
+  color: var(--text-color);
+}
+
+.container h2:last-child {
+  position: absolute;
+  top: initial;
+  bottom: 75px;
+  font-size: 3em;
+  color: var(--text-color);
 }
